@@ -13,7 +13,6 @@ int amountOfDaylight;
 int twilightSwitchValue = 65000;
 
 Serial RaspBerry(USBTX, USBRX);  // tx, rx
-Serial arduino(D14, D15); // tx, rx
 
 volatile char c = '\0'; // Initialized to the NULL character
 
@@ -58,8 +57,6 @@ int main()
     ticker.attach(&flip_print_serial, 2);
     outdoorLight_ticker.attach(&outdoorLightControl, 5);
     
-    arduino.baud(9600);
-    
     while(1) {
         
         h25k5a.output_sine_wave();
@@ -68,14 +65,6 @@ int main()
         
         amountOfDaylight = daylight.read_u16();
         
-        if(c == 'A') {
-            c = '\0';
-            arduino.printf("1");
-        }
-        if(c == 'B') {
-            c = '\0';
-            arduino.printf("2");
-        }
         if (c == '1') {
             c = '\0';  // To avoid execution of this block until if statement is true again.
             sw1.flipState();
