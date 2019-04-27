@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainView.qml</file>
+        <file>LightsView.qml</file>
+        <file>AirQualityView.qml</file>
+        <file>TopBar.qml</file>
+        <file>SquareButton.qml</file>
+        <file>DoorsView.qml</file>
+        <file>serial.h</file>
+        <file>serial.cpp</file>
+    </qresource>
+</RCC>
